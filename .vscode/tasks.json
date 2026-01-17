@@ -1,0 +1,26 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build OSX",
+            "type": "shell",
+            "command": "clang++",
+            "args": [
+                "-std=c++17",
+                "-g",
+                "./src/*.cpp",
+                "-I/opt/homebrew/opt/raylib/include",
+                "-L/opt/homebrew/opt/raylib/lib",
+                "-Wl,-rpath,/opt/homebrew/opt/raylib/lib",
+                "-lraylib",
+                "-o",
+                "bin/build_osx"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$gcc"]
+        }
+    ]
+}
